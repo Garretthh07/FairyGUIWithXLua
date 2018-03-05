@@ -1,0 +1,15 @@
+{
+	"codeGeneration":{
+		"classNamePrefix":"UI_",
+		"codePath":"",
+		"codeType":"",
+		"getMemberByName":false,
+		"ignoreNoname":false,
+		"memberNamePrefix":"m_",
+		"packageName":""
+	},
+	"compressDesc":true,
+	"fileExtension":"",
+	"packageCount":2,
+	"path":"G:\\github_workspace\\FairyGUIWithXLua\\Assets\\Resources"
+}
