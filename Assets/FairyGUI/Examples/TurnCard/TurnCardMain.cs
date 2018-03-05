@@ -19,10 +19,6 @@ public class TurnCardMain : MonoBehaviour
 
 	void Start()
 	{
-        XLua.LuaEnv luaenv = new XLua.LuaEnv();
-        luaenv.DoString("CS.UnityEngine.Debug.Log('hello world')");
-        luaenv.Dispose();
-
         _mainView = this.GetComponent<UIPanel>().ui;
 
 		_c0 = (Card)_mainView.GetChild("c0");

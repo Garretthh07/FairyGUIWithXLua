@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,151 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &96045796
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 96045799}
-  - component: {fileID: 96045798}
-  - component: {fileID: 96045797}
-  m_Layer: 5
-  m_Name: UIPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &96045797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96045796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f30e9532e25d54e4789a3b737b33f79e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &96045798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96045796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1430693950, guid: 2fc78494ea70fb648affe3c1cb970b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  packageName: TurnCard
-  componentName: Main
-  fitScreen: 1
-  sortingOrder: 0
-  packagePath: UI/TurnCard
-  renderMode: 0
-  renderCamera: {fileID: 0}
-  position: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
-  rotation: {x: 0, y: 0, z: 0}
-  fairyBatching: 1
-  touchDisabled: 0
-  cachedUISize: {x: 1136, y: 640}
-  hitTestMode: 0
-  setNativeChildrenOrder: 0
---- !u!4 &96045799
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 96045796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.015624999, y: 0.015624999, z: 0.015624999}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1093699821
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1093699824}
-  - component: {fileID: 1093699823}
-  - component: {fileID: 1093699822}
-  m_Layer: 0
-  m_Name: Stage Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1093699822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1093699821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1134306587, guid: 2fc78494ea70fb648affe3c1cb970b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  constantSize: 1
---- !u!20 &1093699823
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1093699821}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: -30
-  far clip plane: 30
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: 1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 32
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1093699824
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1093699821}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.599447, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398533359
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,53 +184,47 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1894282122
+--- !u!1 &1576000005
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1894282126}
-  - component: {fileID: 1894282123}
-  m_Layer: 5
-  m_Name: Example
+  - component: {fileID: 1576000007}
+  - component: {fileID: 1576000006}
+  m_Layer: 0
+  m_Name: LuaBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1894282123
+--- !u!114 &1576000006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1894282122}
+  m_GameObject: {fileID: 1576000005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1257120521, guid: 2fc78494ea70fb648affe3c1cb970b8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ae6a2f58ec68f842ba0a5fea9739801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMode: 1
-  screenMatchMode: 0
-  designResolutionX: 1136
-  designResolutionY: 640
-  fallbackScreenDPI: 96
-  defaultSpriteDPI: 96
-  constantScaleFactor: 1
-  ignoreOrientation: 0
---- !u!4 &1894282126
+  luaScript: {fileID: 4900000, guid: b9397214ce14de24a98726bd7ce169c0, type: 3}
+  injections: []
+--- !u!4 &1576000007
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1894282122}
+  m_GameObject: {fileID: 1576000005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.935237, y: -2.015634, z: -0.109375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
