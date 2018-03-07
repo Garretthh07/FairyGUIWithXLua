@@ -70,7 +70,8 @@ public static class FairyGUIToXLuaConfig
         (typeof(GLuaSlider)),
         (typeof(GLuaComboBox)),
         (typeof(LuaWindow)),
-        (typeof(TweenUtils))
+        (typeof(TweenUtils)),
+        (typeof(TimerCallback)),
     };
 
     [CSharpCallLua]
@@ -79,5 +80,6 @@ public static class FairyGUIToXLuaConfig
         (typeof(EventCallback0)),
         (typeof(EventCallback1)),
         (typeof(System.Action)),
+        (typeof(TimerCallback)),
     };
 }

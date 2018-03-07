@@ -33,3 +33,77 @@ Window = FairyGUI.Window
 GObjectPool = FairyGUI.GObjectPool
 Relations = FairyGUI.Relations
 RelationType = FairyGUI.RelationType
+
+fgui = {}
+
+--[[
+FairyGUI自带的定时器，有需要可以使用。例如：
+每秒回调，无限次数
+fgui.add_timer(1,0,callback)
+可以带self参数
+fgui.add_timer(1,0,callback,self)
+可以自定义参数
+fgui.add_timer(1,0,callback,self,data)
+！！警告，定时器回调函数不要与UI事件回调函数共用
+]]
+function fgui.add_timer(interval, repeatCount, func, obj, param)
+	local callbackParam
+	if param~=nil then
+		if obj==nil then
+			callbackParam=param
+		else
+			callbackParam=obj
+			func = function(p)
+				func(p, param)
+			end
+		end
+	end
+
+	local delegate = fgui_internal.GetDelegate(func, obj, true, FairyGUI.TimerCallback)
+	FairyGUI.Timers.inst:Add(interval, repeatCount, delegate, callbackParam)
+end
+
+function fgui.remove_timer(func, obj)
+	local delegate = fgui_internal.GetDelegate(func, obj, false)
+	if delegate~=nil then
+		FairyGUI.Timers.inst:Remove(delegate)
+	end
+end
+
+---以下是内部使用的代码---
+fgui_internal = {}
+
+--这里建立一个c# delegate到lua函数的映射，是为了支持self参数，和方便地进行remove操作
+fgui_internal.EventDelegates = {}
+setmetatable(fgui_internal.EventDelegates, {__mode = "k"})
+function fgui_internal.GetDelegate(func, obj, createIfNone, delegateType)
+	local mapping
+	if obj~=nil then
+		mapping = obj.EventDelegates
+		if mapping==nil then
+			mapping = {}
+			setmetatable(mapping, {__mode = "k"})
+			obj.EventDelegates = mapping
+		end
+	else
+		mapping = fgui_internal.EventDelegates
+	end
+
+	local delegate = mapping[func]
+	if createIfNone and delegate==nil then
+		local realFunc
+		if obj~=nil then
+			realFunc = function(context)
+				func(obj,context)
+			end
+		else
+			realFunc = func
+		end
+		delegateType = delegateType or FairyGUI.EventCallback1
+		delegate = delegateType(realFunc)
+
+		mapping[func] = delegate
+	end
+
+	return delegate
+end

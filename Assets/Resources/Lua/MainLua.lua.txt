@@ -10,7 +10,10 @@ require 'Lua.FairyGUI'
 ]]
 --local breakSocketHandle,debugXpCall = require("LuaDebug")("192.168.1.102",7003)    -- ip 适用于 win mac 移动设备
 local breakSocketHandle,debugXpCall = require("Lua.LuaDebug")("localhost",7003)  --本机调试 win mac
-
+local function doDebugUpdate()
+    breakSocketHandle()
+end
+fgui.add_timer(0.1,0,doDebugUpdate)
 
 local function Card(button)
     return button
