@@ -1,0 +1,48 @@
+require 'Lua.FairyGUI'
+
+--[[
+    1. IP地址当本机调试时可使用localhost远程调试或移动设备端调试是需要输入调试器所在机器具体的ip 
+    2. port 端口 LuaIde 默认配置中端口为7003  如有需要可执行更改确保调试器配置端口和调用
+    代码的端口统一即可  
+    3. breakSocketHandle luaIde断点及时刷新函数,需要在定时器中调用 该函数确保断点能够及时的
+    发送到lua 客户端  
+    4. debugXpCall 程序异常监听函数,用于当程序出现异常时调试器定位错误代码 ulua 中为找到合适的位置添加 可忽略该方法不影响调试,如果有可统一添加的位置可告知一下
+]]
+--local breakSocketHandle,debugXpCall = require("LuaDebug")("192.168.1.102",7003)    -- ip 适用于 win mac 移动设备
+local breakSocketHandle,debugXpCall = require("Lua.LuaDebug")("localhost",7003)  --本机调试 win mac
+
+
+local function Card(button)
+    return button
+end
+
+function start()
+    UIPackage.AddPackage('TurnCard')
+    local view = UIPackage.CreateObject('TurnCard', 'Main')
+    GRoot.inst:AddChild(view)
+
+    local _c0 = Card(view:GetChild("c0"))
+    local _c1 = Card(view:GetChild("c1"))
+
+    print("== 11 ==", _c0, _c1)
+
+    local function OnClick0(context)
+        print("test click 00", context)
+    end
+
+    _c0.onClick:Add(OnClick0)
+
+    local function OnClick1(context)
+        print("test click 11", context)
+    end
+
+    _c1.onClick:Add(OnClick1)
+end
+
+function update()
+    --print("lua update...", r)
+end
+
+function ondestroy()
+    print("lua destroy")
+end

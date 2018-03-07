@@ -14,7 +14,6 @@ public class Injection
 [LuaCallCSharp]
 public class LuaBehaviour : MonoBehaviour
 {
-    public TextAsset luaScript;
     public Injection[] injections;
 
     internal static LuaEnv luaEnv = new LuaEnv(); //all lua behaviour shared one luaenv only!
@@ -42,7 +41,7 @@ public class LuaBehaviour : MonoBehaviour
             scriptEnv.Set(injection.name, injection.value);
         }
 
-        luaEnv.DoString(luaScript.text, "LuaBehaviour", scriptEnv);
+        luaEnv.DoString("require 'Lua.MainLua'", "LuaBehaviour", scriptEnv);
 
         Action luaAwake = scriptEnv.Get<Action>("awake");
         scriptEnv.Get("start", out luaStart);

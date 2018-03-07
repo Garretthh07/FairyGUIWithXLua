@@ -61,6 +61,16 @@ public static class FairyGUIToXLuaConfig
         (typeof(GObjectPool)),
         (typeof(Relations)),
         (typeof(RelationType)),
+        (typeof(Timers)),
+        (typeof(LuaUIHelper)),
+        (typeof(GLuaComponent)),
+        (typeof(GLuaLabel)),
+        (typeof(GLuaButton)),
+        (typeof(GLuaProgressBar)),
+        (typeof(GLuaSlider)),
+        (typeof(GLuaComboBox)),
+        (typeof(LuaWindow)),
+        (typeof(TweenUtils))
     };
 
     [CSharpCallLua]
