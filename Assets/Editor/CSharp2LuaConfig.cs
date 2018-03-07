@@ -4,6 +4,21 @@ using UnityEngine;
 using XLua;
 using FairyGUI;
 
+[LuaCallCSharp]
+[ReflectionUse]
+public static class FairyGUIEventListenerExtension
+{
+    public static void Add0(this EventListener o, EventCallback0 callback)
+    {
+        o.Add(callback);
+    }
+
+    public static void Add1(this EventListener o, EventCallback1 callback)
+    {
+        o.Add(callback);
+    }
+}
+
 /// <summary>  
 /// Fariry导出XLua接口  
 /// </summary>  
